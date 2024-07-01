@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Alumno>
+
+<<div class="container">
+    <a class="btn-search" asp-action="Nuevo">
+        Nuevo
+    </a>
+    <div class="title">
+        Página Alumnos
+    </div>
+
+    <form method="get" action="@Url.Action("Index", "Alumnos")" class="search-form">
+        <input type="text" name="nombreBusqueda" class="search-input" placeholder="Buscar por nombre">
+        <input type="text" name="apellidoBusqueda" class="search-input" placeholder="Buscar por apellido">
+        <button type="submit" class="btn-search">Buscar</button>
+    </form>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>AlumnoId</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Dirección</th>
+                    <th>Sexo</th>
+                    <th>FechaNacimiento</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-controller="Alumnos" asp-action="Editar" asp-route-id="@item.AlumnoId">@item.AlumnoId</a>
+                        </td>
+                        <td>@item.Nombres</td>
+                        <td>@item.Apellidos</td>
+                        <td>@item.Direccion</td>
+                        <td>@item.Sexo</td>
+                        <td>@item.FechaNacimiento</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

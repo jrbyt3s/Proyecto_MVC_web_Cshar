@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "data source=LAPTOP-P136TM9O;Initial Catalog=Colegio;Trusted_Connection=True;Integrated Security=true;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\Colegio -Force -Context ColegioContext

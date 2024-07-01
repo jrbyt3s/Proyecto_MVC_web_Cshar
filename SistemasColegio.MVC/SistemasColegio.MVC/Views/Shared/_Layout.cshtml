@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Colegio San Agustin</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+   @*  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />  *@   
+   @*  <link rel="stylesheet" href="~/SistemasColegio.MVC.styles.css" asp-append-version="true" /> *@
+</head>
+
+    <body>
+        <header class="header">
+            <a href="#" class="logo">
+                <img class="logo-img" src="~/assets/logo_sanAgustin_80px.png" alt="logo" />
+                San Agustin
+            </a>
+
+            <input type="checkbox" name="" id="check">
+            <label for="check" class="icons">
+                <i class='bx bx-menu' id="menu-icon"></i>
+                <i class='bx bx-x' id="close-icon"></i>
+            </label>
+
+            <nav class="navbar">
+                <a style="--i:0" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <a style="--i:1" asp-area="" asp-controller="Alumnos" asp-action="Index">Alumnos</a>
+                <a style="--i:2" asp-area="" asp-controller="Matriculas" asp-action="Index">Matricula</a>
+                <a style="--i:3" asp-area="" asp-controller="Notas" asp-action="Index">Notas</a>
+                <a style="--i:4" href="#">Contacto</a>
+            </nav>
+        </header>
+        <div class="main-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   <footer class="footer">
+       <div class="">
+           &copy; 2024 - Colegio San Agustin - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+       </div>
+   </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

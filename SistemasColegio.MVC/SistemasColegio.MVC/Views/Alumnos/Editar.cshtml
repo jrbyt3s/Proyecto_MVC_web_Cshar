@@ -1,0 +1,61 @@
+﻿@model Alumno
+<div style="margin-top: 20px; margin-bottom: 20px;">
+    <div style="display: flex; justify-content: center;">
+        @if (@Model.AlumnoId > 0)
+        {
+            <h1>Edicion de Alumno</h1>
+        }
+        else
+        {
+            <h1>Creacion de Alumno</h1>
+        }
+    </div>
+</div>
+
+<br />
+<br />
+<a style="margin-left: 10px; margin-right: 10px;" href="~/alumnos"> << Retornar a Alumnos</a>
+<br />
+<br />
+<div style="margin-left: 20px; margin-right: 20px;">
+    <form style="display: flex; flex-direction: column;" action="~/alumnos/editar" method="post">
+
+        <div style="margin-bottom: 10px;">
+            <label style="margin-left:10px" for="txtAlumnoId">AlumnoId</label>
+            <input style="margin-left:10px" type="text" id="txtAlumnoId" name="AlumnoId" value="@Model.AlumnoId" disabled>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label style="margin-left:10px" for="txtNombre">Nombre</label>
+            <input style="margin-left:20px" type="text" id="txtNombre" name="Nombres" value="@Model.Nombres" required>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label style="margin-left:10px" for="txtApellidos">Apellidos</label>
+            <input style="margin-left:10px" type="text" id="txtApellidos" name="Apellidos" value="@Model.Apellidos" required>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label style="margin-left:10px" for="txtDireccion">Direccion</label>
+            <input style="margin-left:10px" type="text" id="txtDireccion" name="Direccion" value="@Model.Direccion" required>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label style="margin-left:10px" for="txtSexo">Sexo</label>
+            <input style="margin-left:50px" type="text" id="txtSexo" name="Sexo" value="@Model.Sexo" required>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label style="margin-left:10px" for="txtFechaNacimiento">FechaNacimiento</label>
+            <input style="margin-left:10px" type="text" id="txtFechaNacimiento" name="FechaNacimiento" value="@Model.FechaNacimiento" required>
+        </div>
+
+        @* Boton condicional *@
+        <div style="margin-top: 20px;">
+            @if (@Model.AlumnoId > 0)
+            {
+                <button type="submit" style="padding: 5px 40px;" class="btn-search ">Editar</button>
+            }
+            else
+            {
+                <button type="submit" style="padding: 5px 40px;" class="btn-search">Crear</button>
+            }
+        </div>
+    </form>
+</div>
+

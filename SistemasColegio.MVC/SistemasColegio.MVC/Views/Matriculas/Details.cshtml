@@ -1,0 +1,73 @@
+﻿@model SistemasColegio.MVC.Models.Colegio.Matricula
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<style>
+    body{
+        background-color: #F0F8FF;
+    }
+    .matricula-container {
+        background-color: #f2f2f2;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        width:400px;
+    }
+
+    .matricula-title {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .matricula-list dt {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .matricula-list dd {
+        margin-bottom: 10px;
+    }
+
+    .section-label {
+        margin-left: 10px;
+        font-weight: bold;
+    }
+
+    .section-input {
+        margin-left: 10px;
+        padding: 5px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+</style>
+
+<div >
+    <div class="matricula-container">
+        <h4 class="matricula-title">Matricula</h4>
+        <hr />
+        <dl class="row matricula-list">
+            <dt class="col-sm-2">Fecha:</dt>
+            <dd class="col-sm-10">@Html.DisplayFor(model => model.Fecha)</dd>
+            <dt class="col-sm-2">Alumno:</dt>
+            <dd class="col-sm-10">@Model.Alumno.ToString()</dd>
+            <dt class="col-sm-2">Grado:</dt>
+            <dd class="col-sm-10">@Model.Grado.ToString()</dd>
+            <dt class="col-sm-2">Seccion:</dt>
+            <dd class="col-sm-10">@Model.Seccion.Nombre</dd>
+        </dl>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model?.MatriculaId">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+
+

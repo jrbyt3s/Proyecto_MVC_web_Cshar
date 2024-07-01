@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SistemasColegio.MVC.ViewModels.MatriculaViewModel>
+
+
+<div class="container">
+    
+    <a class="btn-search" asp-action="Create">
+        Crear Nueva Matricula
+    </a>
+    <div class="title">
+        Página Matriculas
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Matrícula ID</th>
+                <th>Fecha</th>
+                <th>Nivel</th>
+                <th>Sección</th>
+                <th>Nombres del Alumno</th>
+                <th>Apellidos del Alumno</th>
+                <th>Sexo</th>
+                <th>Fecha de Nacimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MatriculaID</td>
+                    <td>@item.Fecha</td>
+                    <td>@item.Nivel</td>
+                    <td>@item.NombreSeccion</td>
+                    <td>@item.NombresAlumno</td>
+                    <td>@item.ApellidosAlumno</td>
+                    <td>@item.SexoAlumno</td>
+                    <td>@item.FechaNacimientoAlumno</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.MatriculaID">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.MatriculaID">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.MatriculaID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
